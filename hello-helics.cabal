@@ -1,14 +1,17 @@
-name:               hello-wai
+name:               hello-helics
 version:            1.0
 build-type:         Simple
 cabal-version:      >= 1.20
 
-executable hello-wai
+executable hello-helics
   main-is:            Main.hs
   default-language:   Haskell2010
   default-extensions: OverloadedStrings
   ghc-options:        -O2 -Wall -threaded
   build-depends:      base,
+                      bytestring,
+                      helics,
+                      helics-wai,
                       http-types,
                       wai,
                       warp

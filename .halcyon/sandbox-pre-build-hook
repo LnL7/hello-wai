@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+source "${HALCYON_DIR}/src.sh"
+
+sandbox_pre_build_hook () {
+  expect_vars HALCYON_BASE
+
+  local archive_name
+  archive_name=${NEW_RELIC_AGENT_SDK:-nr_agent_sdk-v0.16.1.0-beta.x86_64}
+
+  local newrelic_dir
+  newrelic_dir=$( get_tmp_dir 'halcyon-newrelic' ) || return 1
+  acquire_original_source "http://download.newrelic.com/agent_sdk/${archive_name}.tar.gz" "${newrelic_dir}" || return 1
+
+  copy_dir_over "${newrelic_dir}/${archive_name}/include" "${HALCYON_BASE}/sandbox/usr/include" || return 1
+  copy_dir_over "${newrelic_dir}/${archive_name}/lib" "${HALCYON_BASE}/sandbox/usr/lib" || return 1
+}
+
+sandbox_pre_build_hook "$@"

@@ -1,8 +1,8 @@
 {
-  "name": "hello-wai",
+  "name": "hello-helics",
   "description": "Simple Haskell web application",
   "logo": "https://halcyon.sh/logo.svg",
-  "repository": "https://github.com/mietek/hello-wai",
+  "repository": "https://github.com/LnL7/hello-helics",
   "env": {
     "BUILDPACK_URL": {
       "description": "Heroku buildpack for deploying Haskell apps",

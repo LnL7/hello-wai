@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+source "${HALCYON_DIR}/src.sh"
+
+pre_install_hook () {
+  expect_vars HALCYON_BASE
+
+  local tag source_dir install_dir
+  expect_args tag source_dir install_dir -- "$@"
+
+  copy_dir_into "${HALCYON_BASE}/sandbox/usr/lib" "${install_dir}${HALCYON_BASE}/usr/lib" || return 1
+}
+
+pre_install_hook "$@"
