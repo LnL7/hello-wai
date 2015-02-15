@@ -42,6 +42,7 @@ About
 
 Uses [_helics-wai_](http://hackage.haskell.org/package/helics-wai) to enable New Relic APM.
 
-<iframe src="https://rpm.newrelic.com/public/charts/k17g51aoyE4" width="500" height="300" scrolling="no" frameborder="no"></iframe>
+[![](https://github.com/LnL7/hello-helics/blob/master/images/chart.png)](https://hello-helics.herokuapp.com)
+
 
 Made by [Daiderd Jordan](https://github.com/lnl7/).  Published under the [MIT X11 license](https://mietek.io/license/).
